@@ -1,16 +1,12 @@
-.post {
-  margin: 10px;
-  padding: 5px;
-  border: 1px solid;
-}
-
+.post,
 .comment {
   margin: 10px;
   padding: 5px;
   border: 1px solid;
 }
 
-.post-content {
+.post-content,
+.logo {
   text-decoration: none;
   color: black;
 }
