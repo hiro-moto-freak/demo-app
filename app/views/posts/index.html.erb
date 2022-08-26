@@ -3,6 +3,7 @@
 <%= button_to "投稿する", new_post_path, method: :get %>
 
 <% @posts.each do |post| %>
+<%= link_to(post_path(post), class: "post-content") do %>
 <div class="post">
   <div class="post-title">
   タイトル：<%= post.title %>
@@ -17,4 +18,5 @@
   投稿者：<%= post.user.nickname%>
   </div>
 </div>
+<% end %>
 <% end %>

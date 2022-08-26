@@ -1,0 +1,14 @@
+<div class="post">
+  <div class="post-title">
+  タイトル：<%= @post.title %>
+  </div>
+  <div class="post-text">
+  本文：<%= @post.text %>
+  </div>
+  <div class="post-date">
+  投稿日時：<%= @post.created_at%>
+  </div>
+  <div class="post-user">
+  投稿者：<%= @post.user.nickname%>
+  </div>
+</div>
