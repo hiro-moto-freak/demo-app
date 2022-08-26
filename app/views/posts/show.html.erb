@@ -12,3 +12,9 @@
   投稿者：<%= @post.user.nickname%>
   </div>
 </div>
+
+<% if @post.user == current_user %>
+<div>
+<%= button_to "削除", post_path, method: :delete %>
+</div>
+<% end %>

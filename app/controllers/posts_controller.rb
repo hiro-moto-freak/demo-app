@@ -19,6 +19,14 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.user == current_user
+      @post.destroy
+      redirect_to root_path
+    end
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :text).merge(user_id: current_user.id)
