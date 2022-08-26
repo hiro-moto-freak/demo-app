@@ -21,3 +21,21 @@
 <div>
 <%= button_to "コメントする", new_post_comment_path(@post), method: :get %>
 </div>
+
+<% if @comments.exists? %>
+<div class="comments">
+  <% @comments.each do |comment|%>
+  <div class="comment">
+    <div class="post-text">
+    本文：<%= comment.text %>
+    </div>
+    <div class="post-date">
+    投稿日時：<%= comment.created_at%>
+    </div>
+    <div class="post-user">
+    投稿者：<%= comment.user.nickname%>
+    </div>
+  </div>
+  <% end %>
+</div>
+<% end %>
