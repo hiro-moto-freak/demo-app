@@ -14,6 +14,18 @@ class PostsController < ApplicationController
     @post.save
     redirect_to root_path
   end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.user == current_user
+      @post.update(post_params)
+      redirect_to post_path(@post)
+    end
+  end
   
   def show
     @post = Post.find(params[:id])
